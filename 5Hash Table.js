@@ -6,6 +6,7 @@ var hash =(string, max)=>{
     return hash % max;
 }
 
+
 let HashTable = function(){
 
     let storage= [];
@@ -39,6 +40,8 @@ let HashTable = function(){
         var index= hash(key, storageLimit);
         if(storage[index].length ===1 && storage[index][0][0]===key){
             delete storage[index];
+            //The JavaScript delete operator removes a property from an object; if no more references to the same property are held, it is eventually released automatically.
+
         }else{
             for (let i = 0; i < storage[index].length; i++) {
                 if(storage[index][i][0]===key){
@@ -60,7 +63,6 @@ let HashTable = function(){
             }
         }
     }
-
 
 };
 
